@@ -1,0 +1,1232 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;500&display=swap');
+
+/* Reset & Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #000010;
+    color: #e0e8ff;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+}
+
+/* =====================
+   NAVIGATION
+   ===================== */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(0, 0, 30, 0.85);
+    border-bottom: 1px solid rgba(100, 160, 255, 0.3);
+    z-index: 1000;
+    padding: 14px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-logo {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #7ec8ff;
+    letter-spacing: 2px;
+}
+
+.nav-logo span {
+    color: #ffffff;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    font-size: 0.95rem;
+    color: #c0d8ff;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #7ec8ff;
+    border-bottom: 2px solid #7ec8ff;
+    padding-bottom: 2px;
+}
+
+/* Hamburger checkbox - always hidden */
+.nav-toggle {
+    display: none;
+}
+
+/* Hamburger icon - hidden on desktop */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 4px;
+    margin-left: auto;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background-color: #7ec8ff;
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* =====================
+   HERO SECTION (index.html)
+   ===================== */
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 20, 0.5) 0%, rgba(0, 0, 10, 0.2) 50%, rgba(0, 0, 20, 0.6) 100%);
+    z-index: -1;
+}
+
+.hero-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 4.5rem;
+    font-weight: 900;
+    color: #ffffff;
+    text-shadow: 0 0 30px rgba(126, 200, 255, 0.8), 0 0 60px rgba(100, 170, 255, 0.4);
+    letter-spacing: 4px;
+    margin-bottom: 20px;
+}
+
+.hero-title span {
+    color: #7ec8ff;
+}
+
+.hero-subtitle {
+    font-size: 1.1rem;
+    color: #c8e8ff;
+    max-width: 500px;
+    line-height: 1.7;
+    margin-bottom: 40px;
+    text-shadow: 0 1px 8px rgba(0, 0, 20, 0.8);
+}
+
+.btn-primary {
+    display: inline-block;
+    background: rgba(60, 130, 220, 0.6);
+    color: #ffffff;
+    font-size: 1rem;
+    padding: 14px 40px;
+    border-radius: 50px;
+    border: 2px solid rgba(156, 212, 35, 0.7);
+    letter-spacing: 1px;
+    transition: background 0.3s, transform 0.2s;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background: rgba(80, 160, 255, 0.75);
+    transform: scale(1.05);
+}
+
+/* =====================
+   HOME PAGE SECTIONS
+   ===================== */
+.page-wrapper {
+    padding-top: 70px;
+    min-height: 100vh;
+    background-color: #000010;
+}
+
+/* Starfield background using CSS */
+.stars-bg {
+    background-image:
+        radial-gradient(1px 1px at 10% 20%, white, transparent),
+        radial-gradient(1px 1px at 30% 50%, white, transparent),
+        radial-gradient(1px 1px at 50% 10%, white, transparent),
+        radial-gradient(1px 1px at 70% 70%, white, transparent),
+        radial-gradient(1px 1px at 90% 40%, white, transparent),
+        radial-gradient(1px 1px at 20% 80%, white, transparent),
+        radial-gradient(1px 1px at 60% 90%, white, transparent),
+        radial-gradient(1px 1px at 80% 15%, white, transparent),
+        radial-gradient(1px 1px at 40% 60%, white, transparent),
+        radial-gradient(1px 1px at 15% 45%, white, transparent);
+    background-color: #000015;
+}
+
+/* Solar System section */
+.solar-system-section {
+    text-align: center;
+    padding: 60px 0 40px;
+    overflow: hidden;
+}
+
+.solar-system-section h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.8rem;
+    color: #7ec8ff;
+    margin-bottom: 10px;
+    letter-spacing: 3px;
+}
+
+.solar-system-img {
+    width: 100%;
+    margin: 30px 0;
+    display: block;
+}
+
+/* Feature Cards */
+.features-section {
+    background: rgba(0, 10, 40, 0.85);
+    border-top: 1px solid rgba(126, 200, 255, 0.2);
+    border-bottom: 1px solid rgba(126, 200, 255, 0.2);
+    padding: 40px 20px;
+}
+
+.features-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.feature-card {
+    background: rgba(10, 20, 60, 0.7);
+    border: 1px solid rgba(126, 200, 255, 0.25);
+    border-radius: 10px;
+    padding: 30px 24px;
+    width: 260px;
+    text-align: center;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    border-color: #7ec8ff;
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: 14px;
+}
+
+.feature-card h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1rem;
+    color: #7ec8ff;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.feature-card p {
+    font-size: 0.9rem;
+    color: #a0b8d8;
+    line-height: 1.6;
+}
+
+.features-btn-row {
+    text-align: center;
+    margin-top: 35px;
+}
+
+/* =====================
+   SECTION TITLE
+   ===================== */
+.section-title {
+    text-align: center;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2rem;
+    color: #7ec8ff;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: #8aaac8;
+    font-size: 0.95rem;
+    margin-bottom: 40px;
+}
+
+/* =====================
+   PLANETS GRID (planets.html)
+   ===================== */
+.planets-section {
+    padding: 60px 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.planets-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: center;
+}
+
+.planet-card {
+    background: linear-gradient(145deg, rgba(10, 20, 60, 0.9), rgba(0, 10, 40, 0.9));
+    border: 1px solid rgba(126, 200, 255, 0.25);
+    border-radius: 12px;
+    width: 220px;
+    text-align: center;
+    padding: 20px 16px;
+    transition: transform 0.3s, border-color 0.3s;
+    overflow: hidden;
+}
+
+.planet-card:hover {
+    transform: translateY(-6px);
+    border-color: #7ec8ff;
+}
+
+.planet-card img {
+    width: 130px;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 14px;
+    border: 2px solid rgba(126, 200, 255, 0.3);
+}
+
+.planet-card h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1rem;
+    color: #7ec8ff;
+    margin-bottom: 8px;
+}
+
+.planet-card p {
+    font-size: 0.82rem;
+    color: #8aaac8;
+    line-height: 1.5;
+    margin-bottom: 14px;
+}
+
+.btn-small {
+    display: inline-block;
+    background: rgba(40, 100, 200, 0.5);
+    color: #c0d8ff;
+    font-size: 0.8rem;
+    padding: 8px 20px;
+    border-radius: 30px;
+    border: 1px solid rgba(126, 200, 255, 0.4);
+    transition: background 0.3s;
+}
+
+.btn-small:hover {
+    background: rgba(80, 150, 255, 0.7);
+    color: #fff;
+}
+
+/* =====================
+   PLANET DETAIL PAGE
+   ===================== */
+.planet-detail {
+    max-width: 950px;
+    margin: 0 auto;
+    padding: 80px 30px 60px;
+}
+
+.planet-detail-hero {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+}
+
+.planet-detail-hero img {
+    width: 260px;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid rgba(126, 200, 255, 0.4);
+    box-shadow: 0 0 30px rgba(126, 200, 255, 0.2);
+    flex-shrink: 0;
+}
+
+.planet-detail-info h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.5rem;
+    color: #7ec8ff;
+    margin-bottom: 8px;
+}
+
+.planet-tagline {
+    font-size: 1rem;
+    color: #a0b8cc;
+    font-style: italic;
+    margin-bottom: 16px;
+}
+
+.planet-detail-info p {
+    font-size: 0.95rem;
+    color: #c0d0e0;
+    line-height: 1.8;
+}
+
+/* Facts Table */
+.facts-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 40px;
+    font-size: 0.9rem;
+}
+
+.facts-table caption {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.1rem;
+    color: #7ec8ff;
+    margin-bottom: 12px;
+    text-align: left;
+    letter-spacing: 1px;
+}
+
+.facts-table th,
+.facts-table td {
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid rgba(126, 200, 255, 0.15);
+}
+
+.facts-table th {
+    background: rgba(20, 50, 120, 0.5);
+    color: #9dc8f0;
+    font-weight: 500;
+}
+
+.facts-table tr:hover td {
+    background: rgba(30, 60, 130, 0.3);
+}
+
+/* Fun Facts */
+.fun-facts {
+    margin-top: 40px;
+}
+
+.fun-facts h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.2rem;
+    color: #7ec8ff;
+    margin-bottom: 16px;
+}
+
+.fun-facts ul {
+    list-style: none;
+    padding: 0;
+}
+
+.fun-facts ul li {
+    background: rgba(10, 20, 60, 0.6);
+    border-left: 3px solid #7ec8ff;
+    padding: 10px 14px;
+    margin-bottom: 10px;
+    border-radius: 0 8px 8px 0;
+    font-size: 0.9rem;
+    color: #c0d0e0;
+    line-height: 1.6;
+}
+
+/* =====================
+   MISSIONS PAGE
+   ===================== */
+.missions-section {
+    padding: 60px 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.mission-card {
+    background: linear-gradient(145deg, rgba(10, 20, 60, 0.85), rgba(5, 10, 40, 0.85));
+    border: 1px solid rgba(126, 200, 255, 0.2);
+    border-radius: 12px;
+    padding: 24px 28px;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+    transition: border-color 0.3s, transform 0.2s;
+}
+
+.mission-card:hover {
+    border-color: #7ec8ff;
+    transform: translateX(4px);
+}
+
+.mission-icon {
+    font-size: 2.5rem;
+    flex-shrink: 0;
+    margin-top: 4px;
+}
+
+.mission-card h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1rem;
+    color: #7ec8ff;
+    margin-bottom: 6px;
+}
+
+.mission-link {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px dashed rgba(126, 200, 255, 0.4);
+    transition: border-color 0.3s, color 0.3s;
+}
+
+.mission-link:hover {
+    color: #aaddff;
+    border-bottom-color: #7ec8ff;
+}
+
+.mission-meta {
+    font-size: 0.8rem;
+    color: #6888a8;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+}
+
+.mission-card p {
+    font-size: 0.9rem;
+    color: #a8c0d8;
+    line-height: 1.65;
+}
+
+/* =====================
+   GALLERY PAGE
+   ===================== */
+.gallery-section {
+    padding: 60px 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.gallery-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    justify-content: center;
+}
+
+.gallery-item {
+    position: relative;
+    width: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid rgba(126, 200, 255, 0.2);
+    transition: transform 0.3s;
+}
+
+.gallery-item:hover {
+    transform: scale(1.03);
+    border-color: #7ec8ff;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.gallery-caption {
+    background: rgba(0, 10, 40, 0.85);
+    padding: 10px 14px;
+    font-size: 0.85rem;
+    color: #a0c0e0;
+}
+
+/* =====================
+   DWARF PLANETS PAGE
+   ===================== */
+.dwarf-section {
+    padding: 60px 30px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.dwarf-card {
+    background: linear-gradient(145deg, rgba(10, 20, 60, 0.9), rgba(5, 10, 40, 0.9));
+    border: 1px solid rgba(126, 200, 255, 0.2);
+    border-radius: 12px;
+    padding: 28px;
+    margin-bottom: 24px;
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.dwarf-card img {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid rgba(126, 200, 255, 0.3);
+    flex-shrink: 0;
+}
+
+.dwarf-info h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.2rem;
+    color: #7ec8ff;
+    margin-bottom: 6px;
+}
+
+.dwarf-info p {
+    font-size: 0.9rem;
+    color: #a0b8d0;
+    line-height: 1.7;
+}
+
+/* =====================
+   ABOUT PAGE
+   ===================== */
+.about-section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 80px 30px 60px;
+    text-align: center;
+}
+
+.about-section h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2rem;
+    color: #7ec8ff;
+    margin-bottom: 20px;
+}
+
+.about-section p {
+    font-size: 0.96rem;
+    color: #b0c8e0;
+    line-height: 1.85;
+    margin-bottom: 20px;
+}
+
+.about-divider {
+    width: 80px;
+    height: 2px;
+    background: linear-gradient(to right, transparent, #7ec8ff, transparent);
+    margin: 30px auto;
+}
+
+/* =====================
+   CONTACT PAGE
+   ===================== */
+.contact-section {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 80px 30px 60px;
+}
+
+.contact-section h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2rem;
+    color: #7ec8ff;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.contact-section p.lead {
+    text-align: center;
+    color: #8aaac8;
+    margin-bottom: 36px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.contact-form label {
+    font-size: 0.85rem;
+    color: #8aaac8;
+    margin-bottom: 4px;
+    display: block;
+    letter-spacing: 0.5px;
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form select {
+    width: 100%;
+    background: rgba(10, 20, 60, 0.7);
+    border: 1px solid rgba(126, 200, 255, 0.3);
+    border-radius: 8px;
+    padding: 12px 16px;
+    color: #e0eeff;
+    font-size: 0.9rem;
+    font-family: 'Roboto', sans-serif;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #7ec8ff;
+}
+
+.contact-form textarea {
+    height: 130px;
+    resize: vertical;
+}
+
+.contact-form button {
+    background: rgba(40, 100, 210, 0.6);
+    color: #ffffff;
+    font-size: 0.95rem;
+    padding: 14px;
+    border: 1px solid rgba(126, 200, 255, 0.5);
+    border-radius: 50px;
+    cursor: pointer;
+    letter-spacing: 1px;
+    transition: background 0.3s;
+    font-family: 'Roboto', sans-serif;
+}
+
+.contact-form button:hover {
+    background: rgba(80, 150, 255, 0.75);
+}
+
+/* =====================
+   FOOTER
+   ===================== */
+.footer {
+    background: rgba(0, 5, 25, 0.95);
+    border-top: 1px solid rgba(126, 200, 255, 0.2);
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 60px;
+}
+
+.footer-logo {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.3rem;
+    color: #7ec8ff;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+.footer p {
+    font-size: 0.82rem;
+    color: #5a78a0;
+    margin-top: 8px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 14px;
+    list-style: none;
+}
+
+.footer-links a {
+    font-size: 0.85rem;
+    color: #6088b0;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #7ec8ff;
+}
+
+/* =====================
+   BACK BUTTON
+   ===================== */
+.back-btn {
+    display: inline-block;
+    margin: 80px 0 0 30px;
+    color: #7ec8ff;
+    font-size: 0.9rem;
+    border: 1px solid rgba(126, 200, 255, 0.3);
+    padding: 8px 20px;
+    border-radius: 30px;
+    transition: background 0.3s;
+}
+
+.back-btn:hover {
+    background: rgba(80, 150, 255, 0.2);
+}
+
+/* =====================
+   WIKI REFERENCE SECTION
+   ===================== */
+.wiki-ref {
+    max-width: 700px;
+    margin: 0 auto 40px;
+    padding: 0 30px;
+}
+
+.wiki-ref-inner {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    background: linear-gradient(135deg, rgba(8, 20, 60, 0.85), rgba(4, 12, 40, 0.85));
+    border: 1px solid rgba(126, 200, 255, 0.22);
+    border-left: 4px solid #7ec8ff;
+    border-radius: 12px;
+    padding: 20px 26px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.wiki-ref-inner:hover {
+    border-color: rgba(126, 200, 255, 0.55);
+    border-left-color: #7ec8ff;
+    box-shadow: 0 6px 28px rgba(30, 80, 200, 0.2);
+}
+
+.wiki-ref-icon {
+    font-size: 1.8rem;
+    flex-shrink: 0;
+    opacity: 0.9;
+}
+
+.wiki-ref-text {
+    flex: 1;
+}
+
+.wiki-ref-text p {
+    font-size: 0.82rem;
+    color: #6888a8;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+
+.wiki-ref-text a {
+    font-size: 0.97rem;
+    color: #7ec8ff;
+    font-weight: 500;
+    text-decoration: none;
+    border-bottom: 1px dashed rgba(126, 200, 255, 0.45);
+    transition: color 0.25s, border-color 0.25s;
+}
+
+.wiki-ref-text a:hover {
+    color: #c0e8ff;
+    border-bottom-color: #c0e8ff;
+}
+
+.wiki-ref-arrow {
+    font-size: 1.1rem;
+    color: rgba(126, 200, 255, 0.5);
+    flex-shrink: 0;
+    transition: transform 0.25s, color 0.25s;
+}
+
+.wiki-ref-inner:hover .wiki-ref-arrow {
+    transform: translateX(4px);
+    color: #7ec8ff;
+}
+
+
+
+/* =====================
+   INTRO BANNER
+   ===================== */
+.intro-banner {
+    background: linear-gradient(to right, rgba(0, 10, 40, 0.9), rgba(10, 30, 80, 0.9));
+    border-bottom: 1px solid rgba(126, 200, 255, 0.2);
+    padding: 40px 30px;
+    text-align: center;
+}
+
+.intro-banner h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.5rem;
+    color: #7ec8ff;
+    margin-bottom: 12px;
+    letter-spacing: 2px;
+}
+
+.intro-banner p {
+    font-size: 0.95rem;
+    color: #a0b8d0;
+    max-width: 750px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+/* =====================
+   RESPONSIVE - TABLET
+   (max-width: 1024px)
+   ===================== */
+@media (max-width: 1024px) {
+    .navbar {
+        padding: 12px 24px;
+    }
+
+    .nav-links {
+        gap: 18px;
+    }
+
+    .hero-title {
+        font-size: 3.5rem;
+    }
+
+    .planet-detail {
+        padding: 80px 20px 40px;
+    }
+
+    .planet-detail-hero {
+        gap: 30px;
+    }
+
+    .planet-detail-hero img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .missions-section {
+        padding: 60px 20px;
+    }
+
+    .dwarf-section {
+        padding: 60px 20px;
+    }
+
+    .planets-section {
+        padding: 60px 16px;
+    }
+
+    .gallery-section {
+        padding: 60px 16px;
+    }
+}
+
+/* =====================
+   RESPONSIVE - MOBILE
+   (max-width: 768px)
+   ===================== */
+@media (max-width: 768px) {
+
+    /* Navbar - hamburger layout */
+    .navbar {
+        flex-wrap: wrap;
+        align-items: center;
+        padding: 14px 20px;
+        gap: 0;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        gap: 4px;
+        padding: 12px 0 4px;
+        border-top: 1px solid rgba(126, 200, 255, 0.2);
+        margin-top: 10px;
+    }
+
+    .nav-toggle:checked~.nav-links {
+        display: flex;
+    }
+
+    .nav-links li {
+        width: 100%;
+    }
+
+    .nav-links a {
+        font-size: 0.92rem;
+        display: block;
+        padding: 10px 6px;
+        border-bottom: 1px solid rgba(126, 200, 255, 0.08);
+    }
+
+    /* Animate hamburger → X when open */
+    .nav-toggle:checked~.hamburger span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .nav-toggle:checked~.hamburger span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .nav-toggle:checked~.hamburger span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    /* Hero */
+    .hero-title {
+        font-size: 2.6rem;
+        letter-spacing: 2px;
+    }
+
+    .hero-subtitle {
+        font-size: 0.95rem;
+        padding: 0 20px;
+    }
+
+    /* Page wrapper offset for taller navbar */
+    .page-wrapper {
+        padding-top: 100px;
+    }
+
+    /* Solar system image */
+    .solar-system-section h1 {
+        font-size: 2rem;
+    }
+
+    /* Feature cards */
+    .features-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .feature-card {
+        width: 90%;
+        max-width: 360px;
+    }
+
+    /* Planet cards */
+    .planets-grid {
+        gap: 16px;
+    }
+
+    .planet-card {
+        width: 160px;
+        padding: 14px 10px;
+    }
+
+    .planet-card img {
+        width: 100px;
+        height: 100px;
+    }
+
+    /* Planet detail */
+    .planet-detail-hero {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 24px;
+    }
+
+    .planet-detail-hero img {
+        width: 180px;
+        height: 180px;
+    }
+
+    .planet-detail-info h1 {
+        font-size: 1.8rem;
+    }
+
+    .back-btn {
+        margin: 100px 0 0 20px;
+    }
+
+    /* Mission cards */
+    .mission-card {
+        flex-direction: column;
+        gap: 14px;
+        padding: 20px;
+    }
+
+    /* Gallery */
+    .gallery-item {
+        width: 90%;
+        max-width: 360px;
+    }
+
+    /* Dwarf planets */
+    .dwarf-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .dwarf-info h3 {
+        font-size: 1rem;
+    }
+
+    /* About */
+    .about-section {
+        padding: 100px 20px 40px;
+    }
+
+    .about-section h1 {
+        font-size: 1.6rem;
+    }
+
+    /* Contact */
+    .contact-section {
+        padding: 100px 20px 40px;
+    }
+
+    .contact-section h1 {
+        font-size: 1.6rem;
+    }
+
+    /* Footer */
+    .footer-links {
+        flex-wrap: wrap;
+        gap: 12px 20px;
+        justify-content: center;
+    }
+
+    /* Section titles */
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .intro-banner h2 {
+        font-size: 1.2rem;
+    }
+
+    .intro-banner p {
+        font-size: 0.88rem;
+    }
+}
+
+/* =====================
+   RESPONSIVE - SMALL MOBILE
+   (max-width: 480px)
+   ===================== */
+@media (max-width: 480px) {
+
+    /* Navbar */
+    .nav-logo {
+        font-size: 1.2rem;
+    }
+
+    .nav-links a {
+        font-size: 0.78rem;
+    }
+
+    /* Hero */
+    .hero-title {
+        font-size: 1.9rem;
+        letter-spacing: 1px;
+    }
+
+    .hero-subtitle {
+        font-size: 0.85rem;
+    }
+
+    .btn-primary {
+        font-size: 0.9rem;
+        padding: 12px 28px;
+    }
+
+    /* Planet cards — 2 columns on small screens */
+    .planets-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .planet-card {
+        width: 100%;
+        padding: 12px 8px;
+    }
+
+    .planet-card img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .planet-card h3 {
+        font-size: 0.85rem;
+    }
+
+    .planet-card p {
+        font-size: 0.72rem;
+    }
+
+    /* Planet detail */
+    .planet-detail-hero img {
+        width: 140px;
+        height: 140px;
+    }
+
+    .planet-detail-info h1 {
+        font-size: 1.5rem;
+    }
+
+    /* Facts table */
+    .facts-table th,
+    .facts-table td {
+        padding: 8px 10px;
+        font-size: 0.82rem;
+    }
+
+    /* Gallery */
+    .gallery-item {
+        width: 100%;
+    }
+
+    /* Dwarf card */
+    .dwarf-card img {
+        width: 110px;
+        height: 110px;
+    }
+
+    /* Mission */
+    .mission-icon {
+        font-size: 1.8rem;
+    }
+
+    .mission-card h3 {
+        font-size: 0.9rem;
+    }
+
+    /* Footer */
+    .footer {
+        padding: 24px 14px;
+    }
+
+    .footer-logo {
+        font-size: 1.1rem;
+    }
+
+    .footer-links {
+        gap: 10px 14px;
+    }
+}

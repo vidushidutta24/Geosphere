@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact – GeoSphere</title>
+    <meta name="description" content="Get in touch with GeoSphere – send us a message about our Solar System website.">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="stars-bg">
+
+    <nav class="navbar">
+        <div class="nav-logo">Geo<span>Sphere</span></div>
+        <input type="checkbox" id="nav-toggle" class="nav-toggle">
+        <label for="nav-toggle" class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <ul class="nav-links">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="planets.html">Planets</a></li>
+            <li><a href="dwarf-planets.html">Dwarf Planets</a></li>
+            <li><a href="missions.html">Missions</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="page-wrapper">
+        <section class="contact-section">
+
+            <h1>Contact Us</h1>
+            <p class="lead">Have a question, suggestion or just want to say hello? We'd love to hear from you!</p>
+
+            <form class="contact-form">
+                <div>
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" placeholder="e.g. Neil Armstrong" required>
+                </div>
+                <div>
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                </div>
+                <div>
+                    <label for="topic">Topic</label>
+                    <select id="topic" name="topic">
+                        <option value="general">General Enquiry</option>
+                        <option value="planets">Planet Information</option>
+                        <option value="missions">Space Missions</option>
+                        <option value="feedback">Feedback</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" placeholder="Write your message here..." required></textarea>
+                </div>
+                <button type="submit">Send Message 🚀</button>
+            </form>
+
+        </section>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-logo">Geo<span style="color:#fff">Sphere</span></div>
+        <ul class="footer-links">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="planets.html">Planets</a></li>
+            <li><a href="missions.html">Missions</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+        <p>&copy; 2026 GeoSphere. Exploring the cosmos, one planet at a time.</p>
+    </footer>
+
+</body>
+
+</html>

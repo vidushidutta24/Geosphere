@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GeoSphere – Home</title>
+    <meta name="description"
+        content="Welcome to GeoSphere – your guide to our Solar System, featuring planets, missions, and space galleries.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <style>
+        /* ── HOME-ONLY STYLES ─────────────────────────────── */
+
+        /* Hero */
+        .home-hero {
+            position: relative;
+            height: 92vh;
+            min-height: 560px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            overflow: hidden;
+            padding: 0 6%;
+        }
+
+        .home-hero-bg {
+            position: absolute;
+            inset: 0;
+            background: url('solar-system.png') center center / cover no-repeat;
+            filter: brightness(0.55) saturate(1.3);
+            transform: scale(1.04);
+            animation: slowZoom 20s ease-in-out infinite alternate;
+            z-index: 0;
+        }
+
+        @keyframes slowZoom {
+            from {
+                transform: scale(1.04);
+            }
+
+            to {
+                transform: scale(1.12);
+            }
+        }
+
+        /* rich deep-space gradient overlay */
+        .home-hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse at 15% 50%, rgba(10, 30, 80, 0.55) 0%, transparent 60%),
+                linear-gradient(110deg, rgba(0, 0, 20, 0.72) 0%, rgba(0, 5, 30, 0.35) 55%, rgba(0, 0, 10, 0.6) 100%);
+            z-index: 1;
+        }
+
+        .home-hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 620px;
+        }
+
+        .hero-eyebrow {
+            display: inline-block;
+            font-size: 0.75rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #7ec8ff;
+            border: 1px solid rgba(126, 200, 255, 0.4);
+            border-radius: 30px;
+            padding: 5px 16px;
+            margin-bottom: 22px;
+            animation: fadeUp 0.8s ease both;
+        }
+
+        .home-hero h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(2.4rem, 5vw, 4rem);
+            font-weight: 900;
+            color: #fff;
+            line-height: 1.15;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            text-shadow: 0 0 40px rgba(126, 200, 255, 0.5);
+            animation: fadeUp 0.9s 0.1s ease both;
+        }
+
+        .home-hero h1 span {
+            color: #7ec8ff;
+        }
+
+        .home-hero p {
+            font-size: 1.05rem;
+            color: #b0cce8;
+            line-height: 1.75;
+            margin-bottom: 36px;
+            animation: fadeUp 1s 0.2s ease both;
+        }
+
+        .hero-cta-group {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            animation: fadeUp 1s 0.3s ease both;
+        }
+
+        .hero-btn-primary {
+            display: inline-block;
+            background: linear-gradient(135deg, #1a6fc4, #2194f3);
+            color: #fff;
+            font-size: 0.95rem;
+            padding: 13px 34px;
+            border-radius: 50px;
+            border: none;
+            letter-spacing: 1px;
+            font-weight: 500;
+            box-shadow: 0 4px 20px rgba(33, 148, 243, 0.45);
+            transition: transform 0.25s, box-shadow 0.25s;
+        }
+
+        .hero-btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 28px rgba(33, 148, 243, 0.6);
+            color: #fff;
+        }
+
+        .hero-btn-outline {
+            display: inline-block;
+            color: #7ec8ff;
+            font-size: 0.95rem;
+            padding: 13px 34px;
+            border-radius: 50px;
+            border: 1.5px solid rgba(126, 200, 255, 0.55);
+            letter-spacing: 1px;
+            font-weight: 500;
+            transition: background 0.25s, transform 0.25s;
+        }
+
+        .hero-btn-outline:hover {
+            background: rgba(126, 200, 255, 0.12);
+            transform: translateY(-3px);
+            color: #a0d8ff;
+        }
+
+        /* Scroll indicator */
+        .scroll-hint {
+            position: absolute;
+            bottom: 28px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            opacity: 0.55;
+            animation: fadeUp 1.2s 0.6s ease both;
+        }
+
+        .scroll-hint span {
+            font-size: 0.68rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #7ec8ff;
+        }
+
+        .scroll-arrow {
+            width: 22px;
+            height: 22px;
+            border-right: 2px solid #7ec8ff;
+            border-bottom: 2px solid #7ec8ff;
+            transform: rotate(45deg);
+            animation: bounce 1.4s infinite;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            100% {
+                transform: rotate(45deg) translateY(0);
+            }
+
+            50% {
+                transform: rotate(45deg) translateY(6px);
+            }
+        }
+
+        /* Stats strip */
+        .stats-strip {
+            background: linear-gradient(90deg, rgba(4, 12, 40, 0.98), rgba(8, 20, 60, 0.98));
+            border-top: 1px solid rgba(126, 200, 255, 0.18);
+            border-bottom: 1px solid rgba(126, 200, 255, 0.18);
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0;
+        }
+
+        .stat-item {
+            flex: 1 1 180px;
+            text-align: center;
+            padding: 26px 20px;
+            border-right: 1px solid rgba(126, 200, 255, 0.12);
+            transition: background 0.3s;
+        }
+
+        .stat-item:last-child {
+            border-right: none;
+        }
+
+        .stat-item:hover {
+            background: rgba(30, 60, 130, 0.3);
+        }
+
+        .stat-number {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2rem;
+            color: #7ec8ff;
+            font-weight: 700;
+        }
+
+        .stat-label {
+            font-size: 0.78rem;
+            color: #6888a8;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-top: 4px;
+        }
+
+        /* ── Featured Section ── */
+        .home-features {
+            padding: 80px 5% 60px;
+            background: #000015;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(1.4rem, 3vw, 2.1rem);
+            color: #ffffff;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+
+        .section-header h2 span {
+            color: #7ec8ff;
+        }
+
+        .section-header p {
+            color: #7090b8;
+            font-size: 0.95rem;
+            max-width: 580px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        .home-features-grid {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 24px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .hf-card {
+            background: linear-gradient(145deg, rgba(8, 18, 55, 0.9), rgba(4, 10, 35, 0.9));
+            border: 1px solid rgba(126, 200, 255, 0.18);
+            border-radius: 16px;
+            padding: 36px 28px 32px;
+            flex: 1 1 230px;
+            max-width: 280px;
+            text-align: center;
+            transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+            display: block;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .hf-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at center, rgba(126, 200, 255, 0.06) 0%, transparent 60%);
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+
+        .hf-card:hover::before {
+            opacity: 1;
+        }
+
+        .hf-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(126, 200, 255, 0.5);
+            box-shadow: 0 12px 40px rgba(30, 80, 200, 0.25);
+        }
+
+        .hf-icon {
+            font-size: 2.8rem;
+            margin-bottom: 18px;
+            display: block;
+            filter: drop-shadow(0 0 10px rgba(126, 200, 255, 0.35));
+        }
+
+        .hf-card h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.95rem;
+            color: #7ec8ff;
+            margin-bottom: 12px;
+            letter-spacing: 1px;
+        }
+
+        .hf-card p {
+            font-size: 0.88rem;
+            color: #8aaac8;
+            line-height: 1.7;
+            margin-bottom: 22px;
+        }
+
+        .hf-link {
+            display: inline-block;
+            font-size: 0.8rem;
+            color: #7ec8ff;
+            border: 1px solid rgba(126, 200, 255, 0.4);
+            border-radius: 30px;
+            padding: 7px 22px;
+            letter-spacing: 0.8px;
+            transition: background 0.25s, color 0.25s;
+        }
+
+        .hf-link:hover {
+            background: rgba(126, 200, 255, 0.15);
+            color: #c0e8ff;
+        }
+
+        /* ── Intro Banner ── */
+        .intro-banner-home {
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(5, 15, 50, 0.97) 0%, rgba(10, 25, 80, 0.97) 100%);
+            border-top: 1px solid rgba(126, 200, 255, 0.15);
+            border-bottom: 1px solid rgba(126, 200, 255, 0.15);
+            padding: 70px 6%;
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            flex-wrap: wrap;
+        }
+
+        .intro-banner-home::before {
+            content: '';
+            position: absolute;
+            right: -120px;
+            top: -120px;
+            width: 420px;
+            height: 420px;
+            background: radial-gradient(circle, rgba(30, 90, 220, 0.18) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .intro-text {
+            flex: 1 1 320px;
+            max-width: 620px;
+        }
+
+        .intro-text h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(1.4rem, 3vw, 2rem);
+            color: #fff;
+            margin-bottom: 18px;
+            letter-spacing: 1.5px;
+        }
+
+        .intro-text h2 span {
+            color: #7ec8ff;
+        }
+
+        .intro-text p {
+            font-size: 0.95rem;
+            color: #96b8d8;
+            line-height: 1.85;
+            margin-bottom: 14px;
+        }
+
+        .intro-links {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+            margin-top: 28px;
+        }
+
+        .intro-tag {
+            display: inline-block;
+            background: rgba(30, 70, 160, 0.35);
+            border: 1px solid rgba(126, 200, 255, 0.25);
+            border-radius: 6px;
+            color: #7ec8ff;
+            font-size: 0.8rem;
+            padding: 6px 16px;
+            letter-spacing: 0.5px;
+            transition: background 0.3s;
+        }
+
+        .intro-tag:hover {
+            background: rgba(60, 120, 220, 0.4);
+            color: #c0e8ff;
+        }
+
+        .intro-visual {
+            flex: 0 1 340px;
+            text-align: center;
+        }
+
+        .intro-visual img {
+            width: 100%;
+            max-width: 340px;
+            border-radius: 50%;
+            border: 2px solid rgba(126, 200, 255, 0.3);
+            box-shadow:
+                0 0 40px rgba(30, 100, 220, 0.3),
+                0 0 80px rgba(126, 200, 255, 0.1);
+            animation: floatImg 6s ease-in-out infinite;
+        }
+
+        @keyframes floatImg {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-14px);
+            }
+        }
+
+        /* ── Fade-up keyframe ── */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(22px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 700px) {
+            .home-hero {
+                justify-content: center;
+                text-align: center;
+                padding: 0 5%;
+            }
+
+            .hero-cta-group {
+                justify-content: center;
+            }
+
+            .intro-banner-home {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .intro-links {
+                justify-content: center;
+            }
+
+            .intro-visual img {
+                max-width: 260px;
+            }
+
+            .stat-item {
+                flex: 1 1 140px;
+                padding: 20px 12px;
+            }
+        }
+    </style>
+</head>
+
+<body class="stars-bg">
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-logo">Geo<span>Sphere</span></div>
+        <input type="checkbox" id="nav-toggle" class="nav-toggle">
+        <label for="nav-toggle" class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <ul class="nav-links">
+            <li><a href="home.html" class="active">Home</a></li>
+            <li><a href="planets.html">Planets</a></li>
+            <li><a href="dwarf-planets.html">Dwarf Planets</a></li>
+            <li><a href="missions.html">Missions</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- ══ HERO ══════════════════════════════════════════ -->
+    <section class="home-hero" id="hero">
+        <div class="home-hero-bg"></div>
+
+        <div class="home-hero-content">
+            <span class="hero-eyebrow">✦ Explore the Universe</span>
+            <h1>Our <span>Solar</span><br>System Awaits</h1>
+            <p>One star, eight planets, five dwarf planets, and billions of other objects — all bound together by
+                gravity, all waiting to be discovered.</p>
+            <div class="hero-cta-group">
+                <a href="planets.html" class="hero-btn-primary">Explore Planets</a>
+                <a href="missions.html" class="hero-btn-outline">Space Missions</a>
+            </div>
+        </div>
+
+        <div class="scroll-hint">
+            <span>Scroll</span>
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- ══ STATS STRIP ════════════════════════════════════ -->
+    <div class="stats-strip">
+        <div class="stat-item">
+            <div class="stat-number">8</div>
+            <div class="stat-label">Planets</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">5</div>
+            <div class="stat-label">Dwarf Planets</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">200+</div>
+            <div class="stat-label">Known Moons</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">4.6B</div>
+            <div class="stat-label">Years Old</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">∞</div>
+            <div class="stat-label">To Discover</div>
+        </div>
+    </div>
+
+    <!-- ══ FEATURE CARDS ══════════════════════════════════ -->
+    <section class="home-features">
+        <div class="section-header">
+            <h2>Everything You Need to <span>Explore</span></h2>
+            <p>From the scorching surface of Mercury to the icy rings of Neptune — GeoSphere brings the cosmos
+                to your screen.</p>
+        </div>
+
+        <div class="home-features-grid">
+
+            <a href="planets.html" class="hf-card">
+                <span class="hf-icon">🪐</span>
+                <h3>Planets</h3>
+                <p>Dive into detailed profiles of all eight planets — their atmospheres, moons, and unique
+                    characteristics.</p>
+                <span class="hf-link">View Planets →</span>
+            </a>
+
+            <a href="dwarf-planets.html" class="hf-card">
+                <span class="hf-icon">🔭</span>
+                <h3>Dwarf Planets</h3>
+                <p>Discover the fascinating world of dwarf planets like Pluto, Eris, and Ceres at the edge of
+                    our Solar System.</p>
+                <span class="hf-link">Explore →</span>
+            </a>
+
+            <a href="missions.html" class="hf-card">
+                <span class="hf-icon">🚀</span>
+                <h3>Space Missions</h3>
+                <p>Trace humanity's journey beyond Earth — from Apollo 11 to the Voyager probes exploring
+                    interstellar space.</p>
+                <span class="hf-link">View Missions →</span>
+            </a>
+
+            <a href="gallery.html" class="hf-card">
+                <span class="hf-icon">📷</span>
+                <h3>Space Gallery</h3>
+                <p>Browse stunning imagery of planets, nebulae, and cosmic phenomena captured by leading
+                    space telescopes.</p>
+                <span class="hf-link">Open Gallery →</span>
+            </a>
+
+        </div>
+    </section>
+
+    <!-- ══ INTRO BANNER ═══════════════════════════════════ -->
+    <section class="intro-banner-home">
+
+        <div class="intro-text">
+            <h2>Why <span>Explore</span> Space?</h2>
+            <p>
+                Our Solar System is home to breathtaking diversity — from the hot rocky world of Mercury, to the massive
+                gas giant Jupiter, to the icy blue depths of Neptune.
+            </p>
+            <p>
+                Thanks to space missions and modern technology, we have visited the Moon, sent rovers to Mars, and
+                explored distant worlds through powerful telescopes. GeoSphere invites you to journey beyond Earth and
+                discover the remarkable system we call home.
+            </p>
+            <div class="intro-links">
+                <a href="about.html" class="intro-tag">About GeoSphere</a>
+                <a href="contact.html" class="intro-tag">Get in Touch</a>
+                <a href="gallery.html" class="intro-tag">Photo Gallery</a>
+            </div>
+        </div>
+
+        <div class="intro-visual">
+            <img src="solar-system.png" alt="Solar System Diagram">
+        </div>
+
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-logo">Geo<span style="color:#fff">Sphere</span></div>
+        <ul class="footer-links">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="planets.html">Planets</a></li>
+            <li><a href="missions.html">Missions</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <p>&copy; 2026 GeoSphere. Exploring the cosmos, one planet at a time.</p>
+    </footer>
+
+</body>
+
+</html>
