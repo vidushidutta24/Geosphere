@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;500&display=swap');
 
-
 * {
     margin: 0;
     padding: 0;
@@ -22,9 +21,6 @@ img {
     max-width: 100%;
 }
 
-/* =====================
-   NAVIGATION
-   ===================== */
 .navbar {
     position: fixed;
     top: 0;
@@ -70,12 +66,12 @@ img {
     padding-bottom: 2px;
 }
 
-/* Hamburger checkbox - always hidden */
+
 .nav-toggle {
     display: none;
 }
 
-/* Hamburger icon - hidden on desktop */
+
 .hamburger {
     display: none;
     flex-direction: column;
@@ -94,7 +90,7 @@ img {
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-/* Gentle slow zoom to bring the background to life */
+
 @keyframes slowZoom {
     from {
         transform: scale(1);
@@ -125,13 +121,13 @@ img {
     object-fit: cover;
     object-position: center 35%;
     z-index: -2;
-    /* Makes colours richer and more vivid */
+  
     filter: brightness(1.1) saturate(1.3) contrast(1.08);
-    /* Slow back-and-forth zoom so the image feels alive */
+  
     animation: slowZoom 18s ease-in-out infinite alternate;
 }
 
-/* Clean dark gradient overlay — keeps text readable */
+
 .hero-overlay {
     position: absolute;
     top: 0;
@@ -150,7 +146,7 @@ img {
     font-size: 4.5rem;
     font-weight: 900;
     color: #ffffff;
-    /* Stronger blue glow so the title really pops */
+   
     text-shadow: 0 0 20px rgba(126, 200, 255, 0.95), 0 0 55px rgba(100, 170, 255, 0.4);
     letter-spacing: 4px;
     margin-bottom: 20px;
@@ -189,16 +185,13 @@ img {
     box-shadow: 0 0 26px rgba(126, 200, 255, 0.55);
 }
 
-/* =====================
-   HOME PAGE SECTIONS
-   ===================== */
+
 .page-wrapper {
     padding-top: 70px;
     min-height: 100vh;
     background-color: #000010;
 }
 
-/* Starfield background using CSS */
 .stars-bg {
     background-image:
         radial-gradient(1px 1px at 10% 20%, white, transparent),
@@ -214,7 +207,7 @@ img {
     background-color: #000015;
 }
 
-/* Solar System section */
+
 .solar-system-section {
     text-align: center;
     padding: 60px 0 40px;
@@ -235,7 +228,7 @@ img {
     display: block;
 }
 
-/* Feature Cards */
+
 .features-section {
     background: rgba(0, 10, 40, 0.85);
     border-top: 1px solid rgba(126, 200, 255, 0.2);
@@ -291,9 +284,7 @@ img {
     margin-top: 35px;
 }
 
-/* =====================
-   SECTION TITLE
-   ===================== */
+
 .section-title {
     text-align: center;
     font-family: 'Orbitron', sans-serif;
@@ -310,9 +301,7 @@ img {
     margin-bottom: 40px;
 }
 
-/* =====================
-   PLANETS GRID (planets.html)
-   ===================== */
+
 .planets-section {
     padding: 60px 30px;
     max-width: 1100px;
@@ -381,9 +370,7 @@ img {
     color: #fff;
 }
 
-/* =====================
-   PLANET DETAIL PAGE
-   ===================== */
+
 .planet-detail {
     max-width: 950px;
     margin: 0 auto;
@@ -428,7 +415,7 @@ img {
     line-height: 1.8;
 }
 
-/* Facts Table */
+
 .facts-table {
     width: 100%;
     border-collapse: collapse;
@@ -462,7 +449,7 @@ img {
     background: rgba(30, 60, 130, 0.3);
 }
 
-/* Fun Facts */
+
 .fun-facts {
     margin-top: 40px;
 }
@@ -490,9 +477,7 @@ img {
     line-height: 1.6;
 }
 
-/* =====================
-   MISSIONS PAGE
-   ===================== */
+
 .missions-section {
     padding: 60px 30px;
     max-width: 1000px;
@@ -554,9 +539,7 @@ img {
     line-height: 1.65;
 }
 
-/* =====================
-   GALLERY PAGE
-   ===================== */
+
 .gallery-section {
     padding: 60px 30px;
     max-width: 1100px;
@@ -598,9 +581,7 @@ img {
     color: #a0c0e0;
 }
 
-/* =====================
-   DWARF PLANETS PAGE
-   ===================== */
+
 .dwarf-section {
     padding: 60px 30px;
     max-width: 900px;
@@ -641,9 +622,7 @@ img {
     line-height: 1.7;
 }
 
-/* =====================
-   ABOUT PAGE
-   ===================== */
+
 .about-section {
     max-width: 800px;
     margin: 0 auto;
@@ -672,9 +651,7 @@ img {
     margin: 30px auto;
 }
 
-/* =====================
-   CONTACT PAGE
-   ===================== */
+
 .contact-section {
     max-width: 600px;
     margin: 0 auto;
@@ -751,9 +728,7 @@ img {
     background: rgba(80, 150, 255, 0.75);
 }
 
-/* =====================
-   FOOTER
-   ===================== */
+
 .footer {
     background: rgba(0, 5, 25, 0.95);
     border-top: 1px solid rgba(126, 200, 255, 0.2);
@@ -794,9 +769,7 @@ img {
     color: #7ec8ff;
 }
 
-/* =====================
-   BACK BUTTON
-   ===================== */
+
 .back-btn {
     display: inline-block;
     margin: 80px 0 0 30px;
@@ -812,9 +785,7 @@ img {
     background: rgba(80, 150, 255, 0.2);
 }
 
-/* =====================
-   WIKI REFERENCE SECTION
-   ===================== */
+
 .wiki-ref {
     max-width: 700px;
     margin: 0 auto 40px;
@@ -885,9 +856,7 @@ img {
 
 
 
-/* =====================
-   INTRO BANNER
-   ===================== */
+
 .intro-banner {
     background: linear-gradient(to right, rgba(0, 10, 40, 0.9), rgba(10, 30, 80, 0.9));
     border-bottom: 1px solid rgba(126, 200, 255, 0.2);
@@ -911,10 +880,169 @@ img {
     line-height: 1.8;
 }
 
-/* =====================
-   RESPONSIVE - TABLET
-   (max-width: 1024px)
-   ===================== */
+
+/* ══════════════════════════════════════════
+   NASA SPACE SLIDESHOW
+   ══════════════════════════════════════════ */
+.slideshow-section {
+    padding: 60px 30px 50px;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Wrapper: arrow + frame side by side */
+.slideshow-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    margin: 0 auto 22px;
+    max-width: 900px;
+}
+
+/* Rectangular frame with rounded corners */
+.slideshow-frame {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    height: 460px;
+    border-radius: 18px;
+    overflow: hidden;
+    border: 1px solid rgba(126, 200, 255, 0.3);
+    box-shadow: 0 0 40px rgba(30, 80, 200, 0.25);
+    background: #000018;
+}
+
+/* Each slide – hidden by default */
+.slide {
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+
+/* Only the active slide is visible */
+.slide.active {
+    display: block;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Caption overlay at the bottom */
+.slide-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 5, 30, 0.82);
+    color: #b8d8f8;
+    font-size: 0.88rem;
+    padding: 12px 20px;
+    letter-spacing: 0.4px;
+    text-align: center;
+    border-top: 1px solid rgba(126, 200, 255, 0.15);
+}
+
+/* Navigation arrow buttons */
+.slide-btn {
+    background: rgba(10, 25, 70, 0.85);
+    border: 1px solid rgba(126, 200, 255, 0.35);
+    color: #7ec8ff;
+    font-size: 2.4rem;
+    line-height: 1;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 4px 18px rgba(30, 80, 200, 0.3);
+}
+
+.slide-btn:hover {
+    background: rgba(30, 80, 200, 0.55);
+    border-color: #7ec8ff;
+    color: #fff;
+}
+
+/* Dot indicators */
+.slide-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: rgba(126, 200, 255, 0.25);
+    border: 1px solid rgba(126, 200, 255, 0.4);
+    cursor: pointer;
+    display: inline-block;
+}
+
+.dot.active {
+    background: #7ec8ff;
+    border-color: #7ec8ff;
+}
+
+/* Slide counter "1 / 8" */
+.slide-counter {
+    font-size: 0.82rem;
+    color: #5a78a0;
+    letter-spacing: 1px;
+}
+
+/* Responsive – tablets */
+@media (max-width: 768px) {
+    .slideshow-frame {
+        height: 300px;
+    }
+
+    .slide-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.8rem;
+    }
+}
+
+/* Responsive – phones */
+@media (max-width: 480px) {
+    .slideshow-section {
+        padding: 40px 12px 36px;
+    }
+
+    .slideshow-wrapper {
+        gap: 10px;
+    }
+
+    .slideshow-frame {
+        height: 220px;
+        border-radius: 12px;
+    }
+
+    .slide-btn {
+        width: 34px;
+        height: 34px;
+        font-size: 1.4rem;
+    }
+
+    .slide-caption {
+        font-size: 0.76rem;
+        padding: 8px 12px;
+    }
+}
+
+
 @media (max-width: 1024px) {
     .navbar {
         padding: 12px 24px;
@@ -1001,7 +1129,7 @@ img {
         border-bottom: 1px solid rgba(126, 200, 255, 0.08);
     }
 
-    /* Animate hamburger → X when open */
+ 
     .nav-toggle:checked~.hamburger span:nth-child(1) {
         transform: rotate(45deg) translate(5px, 5px);
     }
@@ -1014,7 +1142,7 @@ img {
         transform: rotate(-45deg) translate(5px, -5px);
     }
 
-    /* Hero */
+  
     .hero-title {
         font-size: 2.6rem;
         letter-spacing: 2px;
@@ -1025,17 +1153,17 @@ img {
         padding: 0 20px;
     }
 
-    /* Page wrapper offset for taller navbar */
+   
     .page-wrapper {
         padding-top: 100px;
     }
 
-    /* Solar system image */
+ 
     .solar-system-section h1 {
         font-size: 2rem;
     }
 
-    /* Feature cards */
+  
     .features-grid {
         flex-direction: column;
         align-items: center;
@@ -1046,7 +1174,7 @@ img {
         max-width: 360px;
     }
 
-    /* Planet cards */
+
     .planets-grid {
         gap: 16px;
     }
@@ -1061,7 +1189,6 @@ img {
         height: 100px;
     }
 
-    /* Planet detail */
     .planet-detail-hero {
         flex-direction: column;
         align-items: center;
@@ -1089,13 +1216,13 @@ img {
         padding: 20px;
     }
 
-    /* Gallery */
+  
     .gallery-item {
         width: 90%;
         max-width: 360px;
     }
 
-    /* Dwarf planets */
+   
     .dwarf-card {
         flex-direction: column;
         align-items: center;
@@ -1106,7 +1233,7 @@ img {
         font-size: 1rem;
     }
 
-    /* About */
+    
     .about-section {
         padding: 100px 20px 40px;
     }
@@ -1115,7 +1242,7 @@ img {
         font-size: 1.6rem;
     }
 
-    /* Contact */
+   
     .contact-section {
         padding: 100px 20px 40px;
     }
@@ -1124,14 +1251,14 @@ img {
         font-size: 1.6rem;
     }
 
-    /* Footer */
+   
     .footer-links {
         flex-wrap: wrap;
         gap: 12px 20px;
         justify-content: center;
     }
 
-    /* Section titles */
+
     .section-title {
         font-size: 1.5rem;
     }
@@ -1145,13 +1272,10 @@ img {
     }
 }
 
-/* =====================
-   RESPONSIVE - SMALL MOBILE
-   (max-width: 480px)
-   ===================== */
+
+
 @media (max-width: 480px) {
 
-    /* Navbar */
     .nav-logo {
         font-size: 1.2rem;
     }
@@ -1160,7 +1284,7 @@ img {
         font-size: 0.78rem;
     }
 
-    /* Hero */
+
     .hero-title {
         font-size: 1.9rem;
         letter-spacing: 1px;
@@ -1175,7 +1299,6 @@ img {
         padding: 12px 28px;
     }
 
-    /* Planet cards — 2 columns on small screens */
     .planets-grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -1200,7 +1323,7 @@ img {
         font-size: 0.72rem;
     }
 
-    /* Planet detail */
+   
     .planet-detail-hero img {
         width: 140px;
         height: 140px;
@@ -1210,25 +1333,25 @@ img {
         font-size: 1.5rem;
     }
 
-    /* Facts table */
+  
     .facts-table th,
     .facts-table td {
         padding: 8px 10px;
         font-size: 0.82rem;
     }
 
-    /* Gallery */
+
     .gallery-item {
         width: 100%;
     }
 
-    /* Dwarf card */
+    
     .dwarf-card img {
         width: 110px;
         height: 110px;
     }
 
-    /* Mission */
+    
     .mission-icon {
         font-size: 1.8rem;
     }
@@ -1237,7 +1360,6 @@ img {
         font-size: 0.9rem;
     }
 
-    /* Footer */
     .footer {
         padding: 24px 14px;
     }

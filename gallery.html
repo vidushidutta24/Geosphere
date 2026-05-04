@@ -39,40 +39,128 @@
         </section>
 
         <section class="gallery-section">
-            <h2 class="section-title">Planets</h2>
+
+            <!-- ══ NASA SPACE SLIDESHOW ══════════════════════════════ -->
+            <div class="slideshow-section">
+                <h2 class="section-title">NASA Space Showcase</h2>
+                <p class="section-subtitle">Iconic imagery captured by NASA telescopes, rovers and spacecraft</p>
+
+                <div class="slideshow-wrapper">
+
+                    <!-- Left arrow -->
+                    <button class="slide-btn slide-btn--left" id="slide-prev" aria-label="Previous image">
+                        &#8249;
+                    </button>
+
+                    <!-- Slide track -->
+                    <div class="slideshow-frame" id="slideshow-frame">
+                        <!-- Slide 1 -->
+                        <div class="slide active" id="slide-1">
+                            <img src="Hubble Space Telescope.jpeg" alt="Pillars of Creation – Hubble Space Telescope">
+                            <div class="slide-caption">Pillars of Creation — Eagle Nebula (Hubble, 2014)</div>
+                        </div>
+                        <!-- Slide 2 -->
+                        <div class="slide" id="slide-2">
+                            <img src="Cat's eye nebula_.jpeg" alt="Cat's Eye Nebula – Hubble">
+                            <div class="slide-caption">Cat's Eye Nebula — NGC 6543 (Hubble Space Telescope)</div>
+                        </div>
+                        <!-- Slide 3 -->
+                        <div class="slide" id="slide-3">
+                            <img src="https://th.bing.com/th/id/OIP.VmTl2neOC8NHcjTn_uv3awHaHa?r=0&o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3"
+                                alt="Crab Nebula – Hubble">
+                            <div class="slide-caption">Crab Nebula — Remnant of a Stellar Explosion (NASA/ESA)</div>
+                        </div>
+                        <!-- Slide 4 -->
+                        <div class="slide" id="slide-4">
+                            <img src="https://cdn.esahubble.org/archives/images/screen/heic0611b.jpg"
+                                alt="Hubble Ultra Deep Field">
+                            <div class="slide-caption">Hubble Ultra Deep Field — Thousands of Galaxies in One Shot</div>
+                        </div>
+                        <!-- Slide 5 -->
+                        <div class="slide" id="slide-5">
+                            <img src="https://cdn.esahubble.org/archives/images/screen/heic1107a.jpg"
+                                alt="Rose Galaxies – ARP 273">
+                            <div class="slide-caption">Rose Galaxies — ARP 273 (Hubble Space Telescope)</div>
+                        </div>
+                        <!-- Slide 6 -->
+                        <div class="slide" id="slide-6">
+                            <img src="https://th.bing.com/th/id/OIP.ZkAMZ9n9qGe5RE3h8Tn-vgHaE8?w=200&h=200&c=10&o=6&dpr=1.3&pid=genserp&rm=2"
+                                alt="Ant Nebula – Hubble">
+                            <div class="slide-caption">Ant Nebula — Mz3 Dying Star with Remarkable Symmetry</div>
+                        </div>
+                        <!-- Slide 7 -->
+                        <div class="slide" id="slide-7">
+                            <img src="https://assets.science.nasa.gov/dynamicimage/assets/science/missions/hubble/galaxies/spiral/Hubble_NGC4536_mosaic_3_flat_newcont_FINAL.jpg?w=1200&h=585&fit=crop&crop=faces%2Cfocalpoint"
+                                alt="Star Birth – Hubble">
+                            <div class="slide-caption">Star Birth in the Extreme — Starburst Galaxy (NASA/Hubble)</div>
+                        </div>
+                        <!-- Slide 8 -->
+                        <div class="slide" id="slide-8">
+                            <img src="https://assets.science.nasa.gov/dynamicimage/assets/science/missions/hubble/releases/1999/06/STScI-01EVTA0S66QRSS8S167BW38W99.tif?w=2000"
+                                alt="NGC 4414 Spiral Galaxy">
+                            <div class="slide-caption">NGC 4414 — A Classic Spiral Galaxy 60 Million Light-Years Away
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right arrow -->
+                    <button class="slide-btn slide-btn--right" id="slide-next" aria-label="Next image">
+                        &#8250;
+                    </button>
+
+                </div>
+
+                <!-- Dot indicators -->
+                <div class="slide-dots" id="slide-dots">
+                    <span class="dot active" data-index="0"></span>
+                    <span class="dot" data-index="1"></span>
+                    <span class="dot" data-index="2"></span>
+                    <span class="dot" data-index="3"></span>
+                    <span class="dot" data-index="4"></span>
+                    <span class="dot" data-index="5"></span>
+                    <span class="dot" data-index="6"></span>
+                    <span class="dot" data-index="7"></span>
+                </div>
+
+                <!-- Image counter -->
+                <p class="slide-counter"><span id="slide-current">1</span> / 8</p>
+            </div>
+            <!-- ══ END SLIDESHOW ══════════════════════════════════════ -->
+
+            <h2 class="section-title" style="margin-top:55px">Planets</h2>
             <p class="section-subtitle">The beautiful worlds of our Solar System</p>
 
             <div class="gallery-grid">
                 <div class="gallery-item">
-                    <img src="mercury.png" alt="Mercury">
+                    <img src="images/mercury.png" alt="Mercury">
                     <div class="gallery-caption">Mercury – The Cratered Messenger</div>
                 </div>
                 <div class="gallery-item">
-                    <img src="venus.png" alt="Venus">
+                    <img src="images/venus.png" alt="Venus">
                     <div class="gallery-caption">Venus – Shrouded in Clouds</div>
                 </div>
                 <div class="gallery-item">
-                    <img src="earth.png" alt="Earth">
+                    <img src="images/earth.png" alt="Earth">
                     <div class="gallery-caption">Earth – The Blue Marble</div>
                 </div>
                 <div class="gallery-item">
-                    <img src="mars.png" alt="Mars">
+                    <img src="images/mars.png" alt="Mars">
                     <div class="gallery-caption">Mars – The Red Planet</div>
                 </div>
                 <div class="gallery-item">
-                    <img src="jupiter.png" alt="Jupiter">
+                    <img src="images/jupiter.png" alt="Jupiter">
                     <div class="gallery-caption">Jupiter – The Great Giant</div>
                 </div>
                 <div class="gallery-item">
-                    <img src="saturn.png" alt="Saturn">
+                    <img src="images/saturn.png" alt="Saturn">
                     <div class="gallery-caption">Saturn – The Ringed Wonder</div>
                 </div>
                 <div class="gallery-item">
-                    <img src="uranus.png" alt="Uranus">
+                    <img src="images/uranus.png" alt="Uranus">
                     <div class="gallery-caption">Uranus – The Tilted Giant</div>
                 </div>
                 <div class="gallery-item">
-                    <img src="neptune.png" alt="Neptune">
+                    <img src="images/neptune.png" alt="Neptune">
                     <div class="gallery-caption">Neptune – The Distant Blue</div>
                 </div>
             </div>
@@ -83,19 +171,19 @@
 
             <div class="gallery-grid">
                 <div class="gallery-item">
-                    <img src="hubble.png" alt="Hubble Space Telescope">
+                    <img src="images/hubble.png" alt="Hubble Space Telescope">
                     <div class="gallery-caption">Hubble Space Telescope – 34 Years of Discovery</div>
                 </div>
                 <div class="gallery-item">
-                    <img src="iss.png" alt="International Space Station">
+                    <img src="images/iss.png" alt="International Space Station">
                     <div class="gallery-caption">ISS – International Space Station in Orbit</div>
                 </div>
                 <div class="gallery-item">
-                    <img src="voyager.png" alt="Voyager 1">
+                    <img src="images/voyager.png" alt="Voyager 1">
                     <div class="gallery-caption">Voyager 1 – Humanity's Farthest Traveller</div>
                 </div>
                 <div class="gallery-item">
-                    <img src="james-webb.png" alt="James Webb Space Telescope">
+                    <img src="images/james-webb.png" alt="James Webb Space Telescope">
                     <div class="gallery-caption">James Webb Space Telescope – Seeing the Invisible</div>
                 </div>
             </div>
@@ -105,11 +193,11 @@
 
             <div class="gallery-grid">
                 <div class="gallery-item">
-                    <img src="black-hole.png" alt="Supermassive Black Hole">
+                    <img src="images/black-hole.png" alt="Supermassive Black Hole">
                     <div class="gallery-caption">Supermassive Black Hole – Devouring an Accretion Disk</div>
                 </div>
                 <div class="gallery-item">
-                    <img src="stellar-black-hole.png" alt="Stellar Black Hole">
+                    <img src="images/stellar-black-hole.png" alt="Stellar Black Hole">
                     <div class="gallery-caption">Stellar Black Hole – Twin Jets of High-Energy Matter</div>
                 </div>
 
@@ -121,15 +209,15 @@
 
             <div class="gallery-grid">
                 <div class="gallery-item">
-                    <img src="nebula.png" alt="Nebula">
+                    <img src="images/nebula.png" alt="Nebula">
                     <div class="gallery-caption">A Breathtaking Nebula in Deep Space</div>
                 </div>
                 <div class="gallery-item">
-                    <img src="solar-system.png" alt="Solar System">
+                    <img src="images/solar-system.png" alt="Solar System">
                     <div class="gallery-caption">Our Solar System – Home to 8 Planets</div>
                 </div>
                 <div class="gallery-item">
-                    <img src="hero.png" alt="Earth from space">
+                    <img src="images/hero.png" alt="Earth from space">
                     <div class="gallery-caption">Earth from Orbit – City Lights Below</div>
                 </div>
             </div>
@@ -140,15 +228,15 @@
 
             <div class="gallery-grid">
                 <div class="gallery-item">
-                    <img src="Milkyway Galaxy.jpeg" alt="Milky Way Galaxy">
+                    <img src="images/Milkyway Galaxy.jpeg" alt="Milky Way Galaxy">
                     <div class="gallery-caption">Milky Way – Our Home Galaxy</div>
                 </div>
                 <div class="gallery-item">
-                    <img src="deep-field-galaxies.png" alt="Deep Field Galaxies">
+                    <img src="images/deep-field-galaxies.png" alt="Deep Field Galaxies">
                     <div class="gallery-caption">Hubble Deep Field – Thousands of Galaxies</div>
                 </div>
                 <div class="gallery-item">
-                    <img src="andromeda.png" alt="Andromeda Galaxy">
+                    <img src="images/andromeda.png" alt="Andromeda Galaxy">
                     <div class="gallery-caption">Andromeda Galaxy – Our Nearest Galactic Neighbour</div>
                 </div>
             </div>
@@ -169,6 +257,7 @@
         <p>&copy; 2026 GeoSphere. Exploring the cosmos, one planet at a time.</p>
     </footer>
 
+    <script src="script.js"></script>
 </body>
 
 </html>
