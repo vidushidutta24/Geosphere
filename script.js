@@ -1,11 +1,3 @@
-// ============================================================
-//  GeoSphere – script.js
-//  Handles JS for: index.html | home.html | about.html |
-//                  planet pages | contact.html
-// ============================================================
-
-
-// ── INDEX.HTML: "Launching 🚀" overlay on Explore Now click ─
 const exploreBtn = document.getElementById('explore-btn');
 if (exploreBtn) {
     exploreBtn.addEventListener('click', function (e) {
@@ -13,12 +5,10 @@ if (exploreBtn) {
 
         const dest = this.getAttribute('href');
 
-        // Inject fade-in keyframe
         const ks = document.createElement('style');
         ks.textContent = '@keyframes fadeInOverlay { from { opacity:0 } to { opacity:1 } }';
         document.head.appendChild(ks);
 
-        // Build fullscreen overlay
         const overlay = document.createElement('div');
         overlay.style.cssText = `
             position: fixed; inset: 0; z-index: 9999;
@@ -44,15 +34,14 @@ if (exploreBtn) {
         overlay.appendChild(msg);
         document.body.appendChild(overlay);
 
-        // Navigate after 2 seconds
         setTimeout(function () { window.location.href = dest; }, 500);
     });
 }
 
 
 
-// ── SCROLL-UP BUTTON (home, about, all planet pages) ────────
-// Inject button styles once into <head>
+
+
 const scrollBtnStyle = document.createElement('style');
 scrollBtnStyle.textContent = `
     #scroll-up-btn {
@@ -86,14 +75,12 @@ scrollBtnStyle.textContent = `
 `;
 document.head.appendChild(scrollBtnStyle);
 
-// Create and inject the scroll-up button into <body>
 const scrollUpBtn = document.createElement('button');
 scrollUpBtn.id = 'scroll-up-btn';
 scrollUpBtn.title = 'Back to top';
 scrollUpBtn.innerHTML = '&#8679;';
 document.body.appendChild(scrollUpBtn);
 
-// Show when user scrolls more than 300px, hide otherwise
 window.addEventListener('scroll', function () {
     if (window.scrollY > 300) {
         scrollUpBtn.classList.add('visible');
@@ -102,13 +89,11 @@ window.addEventListener('scroll', function () {
     }
 });
 
-// Smooth scroll to top on click
 scrollUpBtn.addEventListener('click', function () {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
 
-// ── HOME.HTML: Navbar background on scroll ──────────────────
 const navbar = document.querySelector('.navbar');
 if (navbar) {
     window.addEventListener('scroll', function () {
@@ -121,51 +106,14 @@ if (navbar) {
 }
 
 
-// ── HOME.HTML: Animated Counter for Stat Numbers ────────────
-const statsStrip = document.querySelector('.stats-strip');
-if (statsStrip) {
-    const statNumbers = document.querySelectorAll('.stat-number');
-
-    function animateCounter(el, target, duration) {
-        let startTime = null;
-        let isNumeric = !isNaN(parseFloat(target)) && target !== '∞';
-        if (!isNumeric) {
-            el.textContent = target;
-            return;
-        }
-        let end = parseFloat(target);
-        let suffix = target.replace(/[\d.]/g, '');
-
-        function step(timestamp) {
-            if (!startTime) startTime = timestamp;
-            let progress = Math.min((timestamp - startTime) / duration, 1);
-            let value = Math.floor(progress * end);
-            el.textContent = value + suffix;
-            if (progress < 1) {
-                requestAnimationFrame(step);
-            } else {
-                el.textContent = target;
-            }
-        }
-        requestAnimationFrame(step);
-    }
-
-    const observer = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-            if (entry.isIntersecting) {
-                statNumbers.forEach(function (el) {
-                    animateCounter(el, el.textContent.trim(), 1500);
-                });
-                observer.unobserve(statsStrip);
-            }
-        });
-    }, { threshold: 0.4 });
-
-    observer.observe(statsStrip);
-}
 
 
-// ── CONTACT.HTML: Form Validation ───────────────────────────
+
+
+
+
+
+
 const form = document.querySelector('.contact-form');
 if (form) {
     const msgBox = document.createElement('div');
@@ -188,9 +136,7 @@ if (form) {
         const email   = document.getElementById('email').value.trim();
         const message = document.getElementById('message').value.trim();
 
-        // Name: letters and spaces only — no digits, no special characters
         const namePattern  = /^[A-Za-z\s]+$/;
-        // Email: must contain @ and follow standard format
         const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
         msgBox.style.display = 'block';
@@ -238,7 +184,9 @@ if (form) {
 }
 
 
-// ── GALLERY.HTML: NASA Space Slideshow ──────────────────────
+
+
+
 const slideshowFrame = document.getElementById('slideshow-frame');
 if (slideshowFrame) {
     const slides      = document.querySelectorAll('.slide');
@@ -248,7 +196,6 @@ if (slideshowFrame) {
     const currentSpan = document.getElementById('slide-current');
     let current = 0;
 
-    // Show the slide at the given index; hide all others
     function goToSlide(index) {
         slides[current].classList.remove('active');
         dots[current].classList.remove('active');
@@ -260,7 +207,6 @@ if (slideshowFrame) {
         currentSpan.textContent = current + 1;
     }
 
-    // Arrow buttons
     prevBtn.addEventListener('click', function () {
         goToSlide(current - 1);
     });
@@ -269,7 +215,6 @@ if (slideshowFrame) {
         goToSlide(current + 1);
     });
 
-    // Dot clicks
     dots.forEach(function (dot) {
         dot.addEventListener('click', function () {
             goToSlide(parseInt(this.dataset.index, 10));
