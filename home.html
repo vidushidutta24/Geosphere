@@ -340,7 +340,6 @@
             color: #c0e8ff;
         }
 
-        /* ── Intro Banner ── */
         .intro-banner-home {
             position: relative;
             overflow: hidden;
@@ -483,6 +482,13 @@
                 padding: 20px 12px;
             }
         }
+
+        /* Navbar scrolled style – toggled by JS on scroll */
+        .navbar.scrolled {
+            background: rgba(3, 8, 30, 0.97) !important;
+            border-bottom: 1px solid rgba(126, 200, 255, 0.25);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+        }
     </style>
 </head>
 
@@ -528,6 +534,8 @@
             <div class="scroll-arrow"></div>
         </div>
     </section>
+
+
 
 
     <div class="stats-strip">
@@ -637,6 +645,9 @@
         </ul>
         <p>&copy; 2026 GeoSphere. Exploring the cosmos, one planet at a time.</p>
     </footer>
+
+
+    <script src="script.js"></script>
 
 </body>
 
